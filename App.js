@@ -3,10 +3,17 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   
+     <Provider store={store}>
+       <Router>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/detail/:id" element={<DetailScreen />} />
+        <Route path="/create" element={<CreateScreen />} />
+        <Route path="/edit/:id" element={<EditScreen />} />
+      </Routes>
+    </Router>
+   </Provider>
   );
 }
 
